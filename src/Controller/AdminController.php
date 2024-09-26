@@ -6,15 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class MainController extends AbstractController
+class AdminController extends AbstractController
 {
-    #[Route('/', name: 'homepage')]
+    #[Route('/admin', name: 'app_admin')]
     public function index(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'title' => 'Homepage',
-            'homepage_text'=> "Nous somme le ".date('d/m/Y \à H:i'),
-            
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
         ]);
     }
 }
