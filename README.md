@@ -224,5 +224,60 @@ ici, vous choisissez
  true
 ```
 
+### Ajoutez login/logout au menu
+
+```twig
+{# templates/main/menu.html.twig #}
+<nav>
+    {# si nous sommes connectés #}
+                {% if is_granted('IS_AUTHENTICATED') %}
+               <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_admin') }}">Administration</a></li>
+                    {% endif %}
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}">Connexion</a></li>
+                {% endif %}
+</nav>
+```
+
+### Créer un contrôleur d'administration
+
+  php bin/console make:controller AdminController
+  
+Une route vers un dossier `admin` a été créée, on va vérifier si un rôle lui est attribué dans le fichier `config/packages/security.yaml`
+
+```yaml
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+```
+
+Dorénavant, ce dossier (et sous-dossiers sont accessibles que par les `ROLE_ADMIN`)
+
+https://symfony.com/doc/current/security.html#roles
+
+## Création d'un contrôleur pour Admin
+
+    php bin/console make:controller AdminController
+
+On modifie le fichier pour passer certaines variables :
+
+`src/Controller/AdminController.php`
+```php
+# ...
+#[Route('/admin', name: 'app_admin')]
+    public function index(): Response
+    {
+        return $this->render('admin/index.html.twig', [
+            'title' => 'Administration',
+            'homepage_text' => "Bienvenue {$this->getUser()->getUsername()}",
+        ]);
+    }
+# ...
+```
+
 
 
