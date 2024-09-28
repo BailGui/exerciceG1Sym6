@@ -279,5 +279,10 @@ On modifie le fichier pour passer certaines variables :
 # ...
 ```
 
+On duplique `templates/template.front.html.twig` en `templates/template.back.html.twig`. On modifiera ce template suivant les besoins.
+
+On modifie `templates/admin/index.html.twig` pour le faire correspondre aux variables du contrôleur
+
+
 
 
