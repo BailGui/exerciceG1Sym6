@@ -170,7 +170,59 @@ séparation en block de la template bootstrap :
 
 ajout du head, des links et du script dans le fichier `base.html.twig`.
 
+## Création d'une page de connexion
 
+    php bin/console make:security:form-login
+
+```bash
+php bin/console make:security:form-login
+
+ Choose a name for the controller class (e.g. SecurityController) [SecurityController]:
+ >
+
+ Do you want to generate a '/logout' URL? (yes/no) [yes]:
+ >
+
+ Do you want to generate PHPUnit tests? [Experimental] (yes/no) [no]:
+ >
+
+ created: src/Controller/SecurityController.php
+ created: templates/security/login.html.twig
+ updated: config/packages/security.yaml
+
+
+  Success!
+
+
+ Next: Review and adapt the login template: security/login.html.twig to suit your needs.
+
+ On va remplir la table `user`
+
+Avec le contenu suivant :
+
+- username
+  1) Admin
+  2) Redac
+  3) User
+- roles ! json
+  1) ["ROLE_ADMIN","ROLE_REDAC","ROLE_USER"]
+  2) ["ROLE_REDAC","ROLE_USER"]
+  3) []
+- password : Il va falloir crypter les mots de passes avec
+  
+  php bin/console security:hash-password
+
+1) ******
+2) *****
+3) ********
+
+- user_mail
+ici, vous choisissez
+- user_real_name
+  ici vous choisissez
+- user_active
+ true
+```
 
 
 
