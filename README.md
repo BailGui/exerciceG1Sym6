@@ -152,3 +152,25 @@ form_themes: ['bootstrap_5_horizontal_layout.html.twig']
 ```
 
 Le code `bootstrap` est généré, mais il manque le style !
+
+Téléchargement d'une Template bootstrap à ajouter au dossier datas
+
+On s'en servira pour créer les différents twig
+
+## Ajout de `template.front.html.twig` 
+
+séparation en block de la template bootstrap :
+
+`_menu.html.twig`
+`footer.html.twig`
+`header.html.twig`
+`main.html.twig`
+
+## Modification de `base.html.twig`
+
+ajout du head, des links et du script dans le fichier `base.html.twig`.
+
+
+
+
+
