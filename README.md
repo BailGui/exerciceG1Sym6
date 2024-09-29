@@ -447,6 +447,57 @@ et on va modifier l'insertion de `src/Controller/AdminPostController.php` pour a
 
 ```
 
+Ajout de l'image dans l'entity Post 
+
+```
+$ php bin/console make:entity
+
+ Class name of the entity to create or update (e.g. TinyPizza):
+ > Post
+Post
+
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > ImgPost
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Post.php
+
+ Add another property? Enter the property name (or press <return> to stop adding
+ fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+ ```
+
+ Ajout dans PostType
+
+ ```
+ ->add('ImgPost')
+ ```
+
+ Mise à jour du twig de l'index admin_post
+
+ ```php
+ <td>{{ post.ImgPost }}</td>
+ ```
+
+
 
 
 

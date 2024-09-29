@@ -18,6 +18,7 @@ class PostType extends AbstractType
         $builder
             ->add('postTitle')
             ->add('postText')
+            ->add('ImgPost')
             ->add('postDateCreated', null, [
                 'widget' => 'single_text',
             ])

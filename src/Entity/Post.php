@@ -69,6 +69,9 @@ class Post
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $ImgPost = null;
+
 
     public function __construct()
     {
@@ -228,6 +231,18 @@ class Post
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getImgPost(): ?string
+    {
+        return $this->ImgPost;
+    }
+
+    public function setImgPost(?string $ImgPost): static
+    {
+        $this->ImgPost = $ImgPost;
 
         return $this;
     }
