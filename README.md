@@ -497,6 +497,25 @@ Post
  <td>{{ post.ImgPost }}</td>
  ```
 
+ ## Ajout de SimplePost 
+
+### Création du fichier simple_post.html.twig dans le dossier main
+
+Créez ou implementez votre porpre template convenant pour le contenu d'un seul article. 
+
+### Création de la route dans le fichier MainController
+
+```php
+#[Route('/simplepost', name: 'simple_post')]
+    public function simplePost(): Response
+    {
+        return $this->render('main/simple_post.html.twig', [
+            'title' => 'Simple post',
+            'homepage_text'=> "Et je parle encore de moi !",
+        ]);
+    }
+
+```
 
 
 
