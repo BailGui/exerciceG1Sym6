@@ -1,9 +1,6 @@
 {# template du front #}
 {% extends 'base.html.twig' %}
 {% block content %}
-    {% block nav %}
-        {% include 'admin/_menu.admin.html.twig'%}
-    {% endblock %}
         {% block CrudSection %}{% endblock %}
         {% block CrudPost %}{% endblock %}
     {% block header %}
@@ -11,8 +8,5 @@
     {% endblock %}
     {% block main %}
     {% include 'main/main.html.twig'%}
-    {% endblock %}
-    {% block footer %}
-        {% include 'main/footer.html.twig'%}
     {% endblock %}
 {% endblock %}

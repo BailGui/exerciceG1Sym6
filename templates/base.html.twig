@@ -39,7 +39,15 @@
         {% endblock %}
     {% block body %}
     <body>
-    {% block content %}{% endblock %}
+    {% block nav %}
+        {% include 'main/_menu.html.twig'%}
+    {% endblock %}
+    {% block content %}
+    {% block simplePost %}{% endblock %}
+    {% endblock %}
+    {% block footer %}
+        {% include 'main/footer.html.twig'%}
+    {% endblock %}
     </body>
     {% endblock %}
      {% block javascripts %}

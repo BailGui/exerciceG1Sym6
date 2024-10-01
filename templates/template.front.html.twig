@@ -1,17 +1,11 @@
 {# template du front #}
 {% extends 'base.html.twig' %}
 {% block content %}
-    {% block nav %}
-        {% include 'main/_menu.html.twig'%}
-    {% endblock %}
     {% block form %}{% endblock %}
     {% block header %}
         {% include 'main/header.html.twig'%}
     {% endblock %}
     {% block main %}
         {% include 'main/main.html.twig'%}
-    {% endblock %}
-    {% block footer %}
-        {% include 'main/footer.html.twig'%}
     {% endblock %}
 {% endblock %}

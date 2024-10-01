@@ -16,4 +16,14 @@ class MainController extends AbstractController
             'homepage_text'=> "Nous somme le ".date('d/m/Y \à H:i'),
         ]);
     }
+
+#[Route('/simplepost', name: 'simple_post')]
+    public function simplePost(): Response
+    {
+        return $this->render('main/simple_post.html.twig', [
+            'title' => 'Simple post',
+            'homepage_text'=> "Et je parle encore de moi !",
+        ]);
+    }
+
 }
