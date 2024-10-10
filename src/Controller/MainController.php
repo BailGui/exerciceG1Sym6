@@ -5,15 +5,18 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\PostRepository;
 
 class MainController extends AbstractController
 {
     #[Route('/', name: 'homepage')]
-    public function index(): Response
+    public function index(PostRepository $postRep): Response
     {
+        $posts = $postRep->findAll();
         return $this->render('main/index.html.twig', [
             'title' => 'Homepage',
             'homepage_text'=> "Nous somme le ".date('d/m/Y \à H:i'),
+            'posts' => $posts,
         ]);
     }
 
