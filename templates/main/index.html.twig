@@ -37,7 +37,7 @@
             {% if postSwitch % 2 == 0 %}
                 <div class="col-lg-4 border-start custom-border">
                   <div class="post-entry">
-                    <a href="blog-details.html"><img src="{{ asset('img/post-landscape-2.jpg') }}" alt="" class="img-fluid"></a>
+                    <a href="blog-details.html"><img src="{{ asset(post.ImgPost) }}" alt="" class="img-fluid"></a>
                     <div class="post-meta"><span class="date">{{ post.postTitle}}</span> <span class="mx-1">•</span> <span>Jul 5th '22</span></div>
                     <h2><a href="blog-details.html">{{ post.postText }}</a></h2>
                   </div>
