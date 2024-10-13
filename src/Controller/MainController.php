@@ -29,4 +29,12 @@ class MainController extends AbstractController
         ]);
     }
 
+#[Route('/post/{id}', name: 'app_post_show', methods: ['GET'])]
+    public function show(Post $post): Response
+    {
+        return $this->render('main/simple_post.html.twig', [
+            'post' => $post,
+        ]);
+    }
+
 }
